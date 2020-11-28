@@ -8,8 +8,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-     <Text>{name}</Text>
-      <StatusBar style="auto" />
+      <Text>{name}</Text>
+      <Button style={styles.btn1} onPress={() => { setName('Zubair') }} title='change Name'></Button>
+      <Button style={styles.btn1} onPress={() => { setName('Jawad') }} title='change Name'></Button>
     </View>
   );
 }
@@ -20,5 +21,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  btn1: {
+    backgroundColor: 'red',
   },
 });
