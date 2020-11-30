@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-// import Header from './components/header/header'
+import Header from './components/header/header'
 
 export default function App() {
 
@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* <Header /> */}
+      <Header />
       <View style={styles.content}>
 
       </View>
