@@ -5,15 +5,15 @@ function Header() {
 
   return (
     <View style={styles.header}>
-        <Text style={styles.title}>Todos App Using Native</Text>
+        <Text style={styles.title}>My Todos</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
 header:{
-    height: 80,
-    padding: 38,
+    height: 70,
+    padding: 28,
     backgroundColor: "coral",
 },
 title: {

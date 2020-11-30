@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TextInput } from 'react-native';
 import Header from './components/header/header'
+import TodoItems from './components/todoItems/todoItems';
 
 export default function App() {
 
@@ -10,19 +11,27 @@ export default function App() {
     { text: 'making todo app', key: '3' },
   ])
 
+  const pressHandler = (key) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter(todo => todo.key != key)
+    })
+  }
+
   return (
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
-
-      </View>
-      <View style={styles.list}>
-        <FlatList
-          data={todos}
-          renderItem={({ item }) => (
-            <Text>{item.text}</Text>
-          )}
-        />
+        <View style={styles.inputTodos}>
+          {/* <TextInput placeholder='Enter todos name..'></TextInput> */}
+        </View>
+        <View style={styles.list}>
+          <FlatList
+            data={todos}
+            renderItem={({ item }) => (
+              <TodoItems item={item} pressHandler={pressHandler} />
+            )}
+          />
+        </View>
       </View>
     </View>
   );
@@ -31,7 +40,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightblue',
+    backgroundColor: '#fff',
   },
   content: {
     padding: 40,
@@ -40,5 +49,8 @@ const styles = StyleSheet.create({
   list: {
     marginTop: 20,
 
+  },
+  inputTodos: {
+    width: 50,
   }
 });
