@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList, TextInput } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import Header from './components/header/header'
 import TodoItems from './components/todoItems/todoItems';
+import AddTodos from './components/addTodo/addTodo'
 
 export default function App() {
 
@@ -22,7 +23,7 @@ export default function App() {
       <Header />
       <View style={styles.content}>
         <View style={styles.inputTodos}>
-          {/* <TextInput placeholder='Enter todos name..'></TextInput> */}
+          <AddTodos />
         </View>
         <View style={styles.list}>
           <FlatList
