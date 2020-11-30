@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Text, TextInput, Buttton } from 'react-native'
+import { Text, TextInput, StyleSheet, View, Button } from 'react-native'
 
-function AddTodos() {
+function AddTodos({ submitHandler }) {
 
     let [text, setText] = useState('')
     const changeHandler = (val) => {
@@ -9,11 +9,14 @@ function AddTodos() {
     }
 
     return (
-        <TextInput
-            style={styles.input}
-            placeholder='Enter todos name..'
-            onChangeText={changeHandler}
-        />
+        <View>
+            <TextInput
+                style={styles.input}
+                placeholder='Enter todos name..'
+                onChangeText={changeHandler}
+            />
+            <Button onPress={() => submitHandler(text)} title='Add todo' color='coral'></Button>
+        </View>
     )
 }
 
