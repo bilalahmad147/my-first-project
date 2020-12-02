@@ -6,7 +6,7 @@ import AddTodos from './components/addTodo/addTodo'
 
 export default function App() {
 
-  const [todos, setTodos] = useState([
+  let [todos, setTodos] = useState([
     { text: 'buy coffee', key: '1' },
     { text: 'buy Gaming PC', key: '2' },
     { text: 'making todo app', key: '3' },

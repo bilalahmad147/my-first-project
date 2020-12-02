@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 function TodoItems({ item, pressHandler }) {
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => { pressHandler(item.key) }}>
             <Text style={styles.item}>{item.text}</Text>
         </TouchableOpacity>
     )

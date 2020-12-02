@@ -23,8 +23,8 @@ function AddTodos({ submitHandler }) {
 const styles = StyleSheet.create({
     input: {
         marginBottom: 10,
-        borderColor: '#bbb',
-        borderWidth: 1,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd'
     }
 })
 
